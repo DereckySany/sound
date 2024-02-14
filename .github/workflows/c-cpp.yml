@@ -32,4 +32,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: kernel-tarball
-        path: linux-*.deb
+        path: |
+              *.deb
+              *.tar.*
