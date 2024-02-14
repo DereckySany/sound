@@ -28,15 +28,8 @@ jobs:
         make tinyconfig
         make -j${CONCURRENCY_LEVEL} deb-pkg LOCALVERSION=-custom
 
-    - name: Create tarball artifact
-      run: |
-        ls
-        cd ..
-        ls
-        tar czvf kernel-${GITHUB_SHA}.tar.gz linux-${GITHUB_SHA}-custom/
-
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
         name: kernel-tarball
-        path: kernel-${GITHUB_SHA}.tar.gz
+        path: linux-{*.tar.*|*.deb}
