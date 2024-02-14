@@ -25,7 +25,7 @@ jobs:
         make clean
         export CONCURRENCY_LEVEL=$(nproc)
         make help
-        make localnoconfig
+        make tinyconfig
         make -j${CONCURRENCY_LEVEL} deb-pkg LOCALVERSION=_custom
 
     - name: Create tarball artifact
