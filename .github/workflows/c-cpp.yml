@@ -30,7 +30,9 @@ jobs:
 
     - name: Create tarball artifact
       run: |
+        ls
         cd ..
+        ls
         tar czvf kernel-${GITHUB_SHA}.tar.gz linux-${GITHUB_SHA}-custom/
 
     - name: Upload artifact
