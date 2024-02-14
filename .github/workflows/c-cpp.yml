@@ -26,7 +26,7 @@ jobs:
         export CONCURRENCY_LEVEL=$(nproc)
         make help
         make tinyconfig
-        make -j${CONCURRENCY_LEVEL} deb-pkg LOCALVERSION=_custom
+        make -j${CONCURRENCY_LEVEL} deb-pkg LOCALVERSION=-custom
 
     - name: Create tarball artifact
       run: |
