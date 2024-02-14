@@ -31,7 +31,7 @@ jobs:
     - name: Create tarball artifact
       run: |
         cd ..
-        tar czvf kernel-${GITHUB_SHA}.tar.gz linux-${GITHUB_SHA}_custom/
+        tar czvf kernel-${GITHUB_SHA}.tar.gz linux-${GITHUB_SHA}-custom/
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
