@@ -28,11 +28,13 @@ jobs:
         make tinyconfig
         make -j${CONCURRENCY_LEVEL} deb-pkg LOCALVERSION=-custom
         cd ../
-
+        ls
+        cp -v linux-* sound
+  
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
        name: kernel-tarball
-       path: ./linux-*.deb
+       path: linux-*.deb
        if-no-files-found: warn  # Optional
 
