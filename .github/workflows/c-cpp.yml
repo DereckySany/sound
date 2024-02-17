@@ -31,8 +31,9 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: kernel-tarball
-        path: |
-              linux-*.deb
-              linux-*.tar.gz
-        exclude: '*.changes'  # Example: Exclude files ending with .changes
+       name: kernel-tarball
+       path: |
+        linux-*.deb
+        linux-*.tar.gz
+       if-no-files-found: warn  # Optional
+
