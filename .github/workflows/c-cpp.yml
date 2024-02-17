@@ -33,5 +33,6 @@ jobs:
       with:
         name: kernel-tarball
         path: |
-              *.deb
-              *.tar.*
+              linux-*.deb
+              linux-*.tar.gz
+        exclude: '*.changes'  # Example: Exclude files ending with .changes
