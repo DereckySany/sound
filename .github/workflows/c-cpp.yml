@@ -31,10 +31,17 @@ jobs:
         ls
         cp -v linux-* sound
   
-    - name: Upload artifact
+    - name: Upload tarball Linux
       uses: actions/upload-artifact@v3
       with:
        name: kernel-tarball
+       path: linux-*.tar.gz
+       if-no-files-found: warn  # Optional
+   
+    - name: Upload package Linux
+      uses: actions/upload-artifact@v3
+      with:
+       name: linux-kernel-package-multiarch
        path: linux-*.deb
        if-no-files-found: warn  # Optional
 
